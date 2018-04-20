@@ -1,0 +1,43 @@
+JQ1:(optional for post assessment, but must for pre)
+Write generic Stack class in Java with below specification
+- size operation returns the size 
+- top operation to peek top element without removing 
+- pop operation which removes the top element 
+- push operation which pushes into stack 
+
+
+SQ2. Create a csv file 
+name,age,salary
+ABC,2,3.0
+XYZ,2,4.0
+ABCD,10,9.0
+AXYZ,10,18.0
+Read this file and convert to immutable.List[Person]
+where Person is case class with attributes name,age,salary 
+Then find  age vs sum of salary (ie groupby on age)
+
+
+SQ3.Write a case class Complex(not generic) with handling of + and comparison operation 
+Complex has two args real, img and + adds real part and imaginary part of this with other
+Then Create a List of few Complex numbers and do sorting on them 
+Then create a List of few Numbers and do an operation which sum's all real parts and all imaginary parts 
+
+
+
+SQ4.Enhance above class with + operation with any T as RHS 
+which has Numeric implicits conversion  as well operation possible 
+with Double as LHS of + operations 
+//Use case 
+Complex(1,2) + 2
+2 + Complex(2,3)
+
+
+
+SQ5:(Optional)Enhance above class with Generic  T wich has numeric implicits 
+
+
+
+
+
+
+
