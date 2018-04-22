@@ -78,7 +78,8 @@ object Misc{
         val source = new InputSource( new StringReader( get(base) ) )
         val adapter = new scala.xml.parsing.NoBindingFactoryAdapter
         val xml = adapter.loadXML(source, parser)
-        (xml \\ "a" ).map { n => n \@ "href"}.map{ url => if(url.startsWith("http")) url else (new URL(new URL(base),url)).toString}
+        xml
+        //(xml \\ "a" ).map { n => n \@ "href"}.map{ url => if(url.startsWith("http")) url else (new URL(new URL(base),url)).toString}
     }
     
 }
