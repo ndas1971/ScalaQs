@@ -1,0 +1,136 @@
+************** 3 days Scala *******************
+
+
+Prerequistes
+1. Must be Java experienced and exposed to algorithmic concepts 
+2. Each must have machine to work on as this is workshop oriented(any std machine, eg windows 7/8/10 with 4GB , harddisk-10 GB would do)
+3. Each must have internet connection 
+
+
+
+DAY-1
+    Quick SBT 
+    Scala Basic (mutability, immutability, operator)
+    Scala Imperative 
+    Scala collection intoduction 
+    Scala  Object oriented with scalatest an sbt 
+    Case Class and Pattern Matching
+DAY-2 
+    Traits, Mixin class Composition
+    Functional programming 
+    FP with Scala Collection  
+    Stream, parallel, lazy collection
+DAY-3
+    Functional error handling - Option, Try, Either
+    Scala Concurrent (future,akka)
+    Generics and Type class and implicits 
+    variances and bounds
+    scala jdbc 
+    scala xml,json
+    Introduction to scala kafka avro 
+    
+************** 4 days - scala with spark *****************
+Prerequistes
+1. Must be Java experienced and exposed to algorithmic concepts 
+2. Each must have machine to work on as this is workshop oriented(any std machine, eg windows 7/8/10 with 4GB , harddisk-10 GB would do)
+3. Each must have internet connection 
+4. Participent must brush up below concepts(some std link is given)
+   - jdk8 collection, lambda and stream
+	https://docs.oracle.com/javase/tutorial/collections/interfaces/index.html
+	https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
+	https://docs.oracle.com/javase/tutorial/collections/streams/index.html
+   - java generics 
+	https://docs.oracle.com/javase/tutorial/java/generics/index.html
+   - java thread
+	https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html
+   - basic stats and probs and linear algebra
+	https://www.khanacademy.org/math/statistics-probability/probability-library/basic-theoretical-probability/v/basic-probability
+	https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/mean-median-basics/v/statistics-intro-mean-median-and-mode
+	https://www.khanacademy.org/math/statistics-probability/summarizing-quantitative-data/variance-standard-deviation-population/v/range-variance-and-standard-deviation-as-measures-of-dispersion
+	https://www.khanacademy.org/math/algebra-home/alg-matrices/alg-matrices-as-transformations/v/transforming-position-vector
+
+
+DAY-1
+    Quick Build tool - SBT and other build tools like gradle 
+    Scala Basic (mutability, immutability, operator)
+    Scala Imperative 
+    Scala collection intoduction 
+    Scala  Object oriented with scalatest and sbt 
+    Case Class and Pattern Matching
+DAY-2 
+    Functional programming 
+    FP with Scala Collection  including scala jdbc, xml, csv, excel processing 
+    Stream, parallel, lazy collection
+DAY-3
+    Generics , variances and bounds
+    Design pattern- Mixin class Composition, trait
+    Design pattern- Functional error handling - Option, Try
+    Design pattern - Concurrent future, akka 
+    Design pattern - Type class and implicits
+    Spark with scala and sbt setup
+DAY-4
+    Working with RDDs in Spark
+    Spark SQL and Data Frames
+    Spark Streaming ETL
+    Intro to DF based ML and various Models
+    Regression example 
+    Classification example
+    Clustering example 
+
+    
+
+##Installation  
+1. JDK8 prerequiste is must, set JAVA_HOME 
+
+2.For example for windows 
+  Download zip https://github.com/sbt/sbt/releases/download/v1.1.2/sbt-1.1.2.zip
+  Unzip on C:\Users\<<UserName>>\sbt
+3. Open a command prompt 
+$ setx PATH C:\Users\<<UserName>>\sbt\bin 
+
+4.Make a sub dir  'training'
+ Download https://github.com/ndas1971/ScalaQs/forSbtConsole.zip
+ Copy that dir contents from zip file to  'training'
+ It has '2.forSbtConsole\build.sbt' file along with others 
+$ cd training\forSbtConsole
+ execute in command prompt 
+$ sbt console
+ It would download many jars etc , wait for that 
+
+##DONT DO THIS STEP for offline install : Quick download -
+https://github.com/ndas1971/ScalaQs/blob/forSbtConsoleTrunc.zip
+Copy that dir contents from zip file to  'training'
+it has has 'forSbtConsoleTrunc\build.sbt' file along with others 
+$ cd training\forSbtConsoleTrunc
+ execute in command prompt 
+$ sbt console
+ 
+#other options for  Download , scala 11.x
+https://docs.scala-lang.org/getting-started-sbt-track/getting-started-with-scala-and-sbt-on-the-command-line.html
+
+
+
+
+
+
+
+
+
+
+
+
+##Questions 
+    https://github.com/ndas1971/ScalaQs
+
+data.zip 
+    https://drive.google.com/open?id=1sqX9TBiSkplQyZeQ8HhBD6hUX7RlcI_Y
+    https://github.com/ndas1971/ScalaQs
+    https://bit.ly/2qQrHio
+2.forSbtConsole.zip
+    https://drive.google.com/open?id=1brKpsJ9v51hms2sJ8CSqmAkKLuSDyJnD
+    https://github.com/ndas1971/ScalaQs
+    https://bit.ly/2JdFeYI
+forSbtConsoleTrunc.zip
+    https://drive.google.com/open?id=1_xwsOa5F58u-H1iaB27ShcuZY1zhdEAy
+    https://github.com/ndas1971/ScalaQs
+    https://bit.ly/2JdFeYI
