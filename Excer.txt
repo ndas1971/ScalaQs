@@ -1,0 +1,273 @@
+Excercise
+
+//xy.txt:
+qbcd
+abcd
+abcd
+
+cdfe
+cdef
+
+
+
+abcd
+abcs
+
+
+abcd
+
+
+val lines = scala.io.Source.fromFile("xy.txt").getLines.toList
+///HandsOn - read file with deliminator of any number of \n 
+Given 
+  List(qbcd, abcd, abcd, "", cdfe, cdef, "", "", "", abcd, abcs, "", "", abcd)
+Convert to 
+  List(List(qbcd, abcd, abcd), List(cdfe, cdef), List(abcd, abcs), List(abcd))
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+Q2
+Given a Dir, find out fileName of max size 
+
+
+
+Q3
+Create a csv file 
+name,age,salary
+ABC,2,3.0
+XYZ,2,4.0
+ABCD,10,9.0
+AXYZ,10,18.0
+Read this file and convert to immutable.List[Person]
+where Person is case class with attributes name,age,salary 
+Then find  age vs sum of salary (ie groupby on age)
+
+
+Q4
+1. Read fq.txt file 
+2. Each element of a row can be Int, Double or String or not present 
+   Design appropriate class with conversion method from string 
+   Handle exception appropriately 
+3. Each row is represented by java.time.LocalDate, java.time.LocalTime and list of elements  for rest 
+   instance(columnNumber) to get option of element (as element might not be present) 
+   instance.year gives yeare etc convience methods 
+   DateTimeFormatter.ISO_LOCAL_DATE and DateTimeFormatter.ISO_LOCAL_TIME are the formatters 
+   Design appropriate class with above 
+5. Group by Year vs 5 th column which is Int
+
+  
+  
+
+  
+Q5: Streams 
+the value where  cos(x) == x
+Iterator 
+find out max n where factorial(n) < Long.MaxValue 
+  
+  
+  
+Q6:
+Write a case class Complex(not generic) with handling of + and comparison operation 
+Complex has two args real, img and + adds real part and imaginary part of this with other
+Then Create a List of few Complex numbers where real/img comes are Random 
+and do sorting on them in general and by img part 
+Then create a List of few Complex and do an operation which sums all real parts and all imaginary parts 
+
+  
+  
+  
+Q7
+import org.apache.poi.ss.usermodel._ 
+import java.io.File 
+import collection.JavaConversions._ 
+
+val f = new File("../data/Nifty-17_Years_Data-V1.xlsx")
+val wb = WorkbookFactory.create(f)
+val sh = wb.getSheetAt(0) 
+//sheet contains rows, each row contains cell, ie row.getCell(index)
+//each cell has .getDateCellValue, .getNumericCellValue
+Q. Which year has  max diff in Open 
+ 
+  
+  
+  
+  
+Q8
+Update earlier fq.txt with typeclass 
+1. Read fq.txt file 
+2. Each element of a row can be Int, Double or String or not present 
+   Design appropriate class with conversion method from string 
+   This conversion needs to be handled via type class such that runtime conversion can be injected
+   Handle exception appropriately 
+3. Each row is represented by java.time.LocalDate, java.time.LocalTime and list of elements  for rest 
+   instance(columnNumber) to get option of concrete type (as element might not be present) 
+   Use Element s typed class conversion method 
+   instance.year gives yeare etc convience methods 
+   DateTimeFormatter.ISO_LOCAL_DATE and DateTimeFormatter.ISO_LOCAL_TIME are the formatters 
+   Design appropriate class with aboev , has methods for 
+5. Group by Year vs 5 th column which is Int
+  
+  
+  
+Q9:
+all generic on lst:List[T] 
+Mean(lst) =         Sum of lst/length of lst 
+Median(lst) =       sort and midddle value or average of two middle  if length is even
+sd(lst) =           sqrt of( SUM of square of ( each elemnt - mean)  / length of lst  )
+Mode(lst) =         sort with frequency, highest frequency
+Put these methods in List 
+  
+  
+  
+  
+Q10: Json 
+Update ScalaWeather 
+1. get_json to return JsValue 
+2.  getModifiedJsonString to return string of 
+{ "todays_date":{"text": .., "high":..., "low": ..}, "tomorrow_date": {...} .. like five days data}
+ 
+XML 
+1. get_json to return JsValue 
+2.  getModifiedXMLString to return string of 
+<forcasts>
+        <weather date=todays_date>
+        <text>  </text>
+        <high>  </high>
+        <low>   </low>
+        </weather>
+        ... other dates 
+    </forecasts>
+  
+  
+  
+Q10 
+import play.api.libs.json._
+import scala.util._ 
+
+
+val urlJson = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22nome%2C%20ak%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
+val urlXml = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22nome%2C%20ak%22)&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
+
+val futJ  = Misc.wsGet(urlJson, false).mapTo[JsObject]
+val futX = Misc.wsGet(urlXml, true).mapTo[scala.xml.Elem] 
+
+Handle futJ and FutX  to get all forecasts , high in json and xml 
+
+
+Q11:
+Given a list of URL, get sumtotal of all links embedded in each 
+
+Q12:
+Ping-Pong  Actor 
+
+Q13:
+Parallel Download based on Actor  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+##Implicits 
+SQ3.Write a case class Complex(not generic) with handling of + and comparison operation 
+Complex has two args real, img and + adds real part and imaginary part of this with other
+Then Create a List of few Complex numbers and do sorting on them 
+Then create a List of few Complex and do an operation which sum's all real parts and all imaginary parts 
+
+
+
+SQ4.Enhance above class with + operation with any T as RHS 
+which has Numeric implicits conversion  as well operation possible 
+with Double as LHS of + operations 
+//Use case 
+Complex(1,2) + 2
+2 + Complex(2,3)
+
+
+
+SQ5:(Optional)Enhance above class with Generic  T wich has numeric implicits 
+  
+  
+  
+##spark 
+//boston.csv 
+    :Attribute Information (in order):
+        - CRIM     per capita crime rate by town
+        - ZN       proportion of residential land zoned for lots over 25,000 sq.ft.
+        - INDUS    proportion of non-retail business acres per town
+        - CHAS     Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)
+        - NOX      nitric oxides concentration (parts per 10 million)
+        - RM       average number of rooms per dwelling
+        - AGE      proportion of owner-occupied units built prior to 1940
+        - DIS      weighted distances to five Boston employment centres
+        - RAD      index of accessibility to radial highways
+        - TAX      full-value property-tax rate per $10,000
+        - PTRATIO  pupil-teacher ratio by town
+        - B        1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town
+        - LSTAT    % lower status of the population
+        - MEDV     Median value of owner-occupied homes in $1000's
+
+"crim", "zn",   "indus", "chas", "nox",  "rm",  "age",  "dis",  "rad", "tax", "ptratio", "b",   "lstat","medv"
+0.00632, 18,     2.31,    "0",    0.538,  6.575, 65.2,   4.09,  1,      296,   15.3,      396.9, 4.98,   24
+
+1. read data in boston 
+2. Create a new column crimxmedv = crim X medv 
+3. select columns crimxmedv , tax 
+4. what is the max value of crim 
+5. what is max value of medv 
+5. select rows of crim where medv is max 
+6. select rows of medv where crim is max 
+7. how many unique value in chas and rad 
+8. what is max and min value of medv for each chas 
+9. put crimxmedv and tax in csv 
+
+
+// eventTime,deviceId,signal  (5188 line)
+2017-08-23T00:00:00.002Z,"mine",20
+2017-08-23T00:05:00.002Z,"mine",30
+2017-08-23T00:09:00.002Z,"mine",40
+2017-08-23T00:11:00.002Z,"mine",50
+2017-08-23T01:00:00.002Z,"mine",60
+2017-08-23T00:49:59.002Z,"mine",70
+
+1.Create Text file 
+2. read text file in DF 
+3. extract each column  and then 'cast' to correct type with name eventTime,deviceId,signal
+col1 - timestamp, column2 - string, column3-int 
+4. group by deviceId and collect all signals into a list 'signals'
+5. select eventTime,deviceId,signals, it's size and dump into csv file 
+
+ 
+##Java to Scala 
+1.Write a JavaWeather class which have toString method 
+  and a 'get' method which return response (json) as string from below 
+  http://query.yahooapis.com/v1/public/yql?q=select* from weather.forecast where woeid in (select woeid from geo.places(1) where text='mumbai') and u='c' &format=json
+  Note, create a constructor with location, unit and format 
+  Unit and format has default value as "c" and "json"
+2.Write a main class which calls this method and print the string 
+  location, unit and format are taken from command line in this order 
+  User may give unit and format in command line 
+
+Use For URL params , ie after ?q=, use URLEncoder.encode(param, "UTF-8")
+for downlading use 
+URL url = new URL(full_url);
+BufferedInputStream bis = new BufferedInputStream(url.openStream());
+and then read fully 
