@@ -1,0 +1,24 @@
+set INSTALL_ROOT=%~dp0
+
+
+set HADOOP_HOME=%INSTALL_ROOT%hadoop
+set PYTHON_HOME=%INSTALL_ROOT%Python35
+set HIVE_HOME=%INSTALL_ROOT%hive
+set JAVA_HOME=%INSTALL_ROOT%jdk1.8.0_65
+set SCALA_HOME=%INSTALL_ROOT%scala
+set SPARK_HOME=%INSTALL_ROOT%spark
+set ZOOKEEPER_HOME=%INSTALL_ROOT%zookeeper
+set MONGODB_HOME=%INSTALL_ROOT%mongodb
+set KAFKA_HOME=%INSTALL_ROOT%kafka
+set JRE_HOME=%JAVA_HOME%\jre
+
+setx /M PATH "C:\Training\sbt\bin;C:\Training\spark-2.4.4-bin-hadoop2.7\bin;C:\Training\apache-maven-3.6.2\bin;%HADOOP_HOME%\bin;%HADOOP_HOME%\sbin;%PYTHON_HOME%;%PYTHON_HOME%\Scripts;%HIVE_HOME%\bin;%JAVA_HOME%\bin;%SCALA_HOME%\bin;%SPARK_HOME%\bin;%ZOOKEEPER_HOME%\bin;%MONGODB_HOME%\bin;%KAFKA_HOME%\bin\windows;%JRE_HOME%\bin;%PATH%"
+setx /M HADOOP_HOME %INSTALL_ROOT%hadoop
+setx /M HIVE_HOME %INSTALL_ROOT%hive
+setx /M JAVA_HOME %INSTALL_ROOT%jdk1.8.0_65
+setx /M SCALA_HOME %INSTALL_ROOT%scala
+setx /M SPARK_HOME %INSTALL_ROOT%spark
+setx /M ZOOKEEPER_HOME %INSTALL_ROOT%zookeeper
+setx /M KAFKA_HOME %INSTALL_ROOT%kafka
+setx /M JRE_HOME %JAVA_HOME%\jre
+setx /M NLTK_DATA %JAVA_HOME%\nltk_data
